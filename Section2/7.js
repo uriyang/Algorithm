@@ -17,10 +17,10 @@ function makeNewArray(arr, n) {
 }
 
 function solution(inputArr) {
-  const n = inputArr.length;
   let answer = 0;
-
+  const n = inputArr.length;
   const arr = makeNewArray(inputArr, n + 2);
+
   for (let i = 1; i <= n; i++) {
     for (let j = 1; j <= n; j++) {
       const val = arr[i][j];
@@ -28,6 +28,7 @@ function solution(inputArr) {
       const left = arr[i][j - 1];
       const bottom = arr[i + 1][j];
       const right = arr[i][j + 1];
+
       if (val > top && val > left && val > bottom && val > right) {
         answer++;
       }
