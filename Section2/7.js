@@ -24,12 +24,11 @@ function solution(inputArr) {
   for (let i = 1; i <= n; i++) {
     for (let j = 1; j <= n; j++) {
       const val = arr[i][j];
-      if (
-        val > arr[i - 1][j] &&
-        val > arr[i][j - 1] &&
-        val > arr[i + 1][j] &&
-        val > arr[i][j + 1]
-      ) {
+      const top = arr[i - 1][j];
+      const left = arr[i][j - 1];
+      const bottom = arr[i + 1][j];
+      const right = arr[i][j + 1];
+      if (val > top && val > left && val > bottom && val > right) {
         answer++;
       }
     }
