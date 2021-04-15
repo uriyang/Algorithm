@@ -6,7 +6,7 @@ function solution(n, arr) {
       .toString()
       .split("")
       .reduce((pre, curr) => {
-        return Number(pre) + Number(curr);
+        return pre + Number(curr);
       }, 0);
 
     if (pre < sum) {
