@@ -6,7 +6,7 @@ function solution(arr) {
     const temp = num.toString().split("").reverse().join("");
     let flag = false;
 
-    for (let i = 2; i < temp - 1; i++) {
+    for (let i = 2; i <= temp / 2; i++) {
       if (temp % i === 0) {
         flag = true;
         break;
