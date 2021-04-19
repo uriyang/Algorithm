@@ -14,6 +14,7 @@ function solution(m, product) {
     }
   }
 
+  for (let i = 0; i < product.length; i++) {
     const gift = product[i];
     if (!useCoupon) {
       if (calculator(gift[0] / 2 + gift[1], m)) useCoupon = true;
