@@ -6,8 +6,8 @@ function solution(m, product) {
   let useCoupon = false;
   product.sort((a, b) => b[0] - a[0]);
 
-  function calculator(price, total) {
-    if (price <= 10 && total >= price) {
+  function calculator(price) {
+    if (price <= 10 && m >= price) {
       m -= price;
       answer++;
       return true;
@@ -17,9 +17,9 @@ function solution(m, product) {
   for (let i = 0; i < product.length; i++) {
     const gift = product[i];
     if (!useCoupon) {
-      if (calculator(gift[0] / 2 + gift[1], m)) useCoupon = true;
+      if (calculator(gift[0] / 2 + gift[1])) useCoupon = true;
     } else {
-      calculator(gift[0] + gift[1], m);
+      calculator(gift[0] + gift[1]);
     }
   }
   return answer;
